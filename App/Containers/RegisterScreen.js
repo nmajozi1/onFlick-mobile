@@ -5,17 +5,13 @@ import { connect } from 'react-redux'
 import { Images } from '../Themes'
 
 // Styles
-import styles from './Styles/LoginScreenStyle'
+import styles from './Styles/RegisterScreenStyle'
 import images from '../Themes/Images';
 
 class Login extends Component {
 
-  registration () {
-    this.props.navigation.navigate("RegisterScreen")
-  }
-
-  locationPage () {
-    this.props.navigation.navigate("LocationPage")
+  register () {
+    this.props.navigation.navigate("HomeScreen")
   }
 
   render () {
@@ -26,21 +22,14 @@ class Login extends Component {
         </View>
 
         <View style={styles.inputContainer}>
-          {/* <ImageBackground source={images.nailesImage} style={ styles.inputContainer }>
-            
-          </ImageBackground> */}
+          <TextInput style={ styles.inputBoxes } placeholder="Name"></TextInput>
+          <TextInput style={ styles.inputBoxes } placeholder="Surname"></TextInput>
           <TextInput style={ styles.inputBoxes } placeholder="email address"></TextInput>
           <TextInput style={ styles.inputBoxes } placeholder="password"></TextInput>
 
-          <TouchableOpacity onPress={this.locationPage.bind(this)} style={styles.buttonContainer}>
-            <Text style={ styles.buttonText }>Login</Text>
+          <TouchableOpacity onPress={this.register.bind(this)} style={styles.buttonContainer}>
+            <Text style={ styles.buttonText }>REGISTER</Text>
           </TouchableOpacity>
-        </View>
-
-        <View style={ styles.forgotPassContainer}>
-          <Text onPress={this.registration.bind(this)} style={styles.forgotText} > Register </Text>
-          <Text>&nbsp; &nbsp;</Text>
-          <Text style={styles.forgotText} >Forgot Password </Text>
         </View>
       </ScrollView>
     )
